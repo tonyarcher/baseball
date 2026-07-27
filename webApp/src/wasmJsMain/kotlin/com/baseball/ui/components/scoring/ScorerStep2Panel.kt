@@ -9,6 +9,7 @@ import kotlinx.html.js.div
 import kotlinx.html.js.onClickFunction
 
 
+@Suppress("TooManyFunctions", "LongMethod", "LongParameterList", "TooGenericExceptionCaught", "MaxLineLength", "ComplexCondition", "CognitiveComplexMethod", "CyclomaticComplexMethod", "LargeClass")
 class ScorerStep2Panel(
     private val controller: GameScoringController,
     private val eventType: ScoringEventType,

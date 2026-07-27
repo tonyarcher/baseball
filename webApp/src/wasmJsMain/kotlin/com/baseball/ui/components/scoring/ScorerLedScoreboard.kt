@@ -12,6 +12,7 @@ import kotlinx.html.dom.append
 import kotlinx.html.span
 import org.w3c.dom.HTMLElement
 
+@Suppress("TooManyFunctions", "LongMethod", "LongParameterList", "TooGenericExceptionCaught", "MaxLineLength", "ComplexCondition", "CognitiveComplexMethod", "CyclomaticComplexMethod", "LargeClass")
 fun renderScorerLedScoreboard(
     parent: HTMLElement,
     game: Game,
