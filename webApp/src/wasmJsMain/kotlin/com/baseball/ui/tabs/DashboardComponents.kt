@@ -61,7 +61,7 @@ internal fun renderSeasonSelectorCard(container: HTMLElement): SeasonSelectorCon
 
     val card = container.querySelector("#season-selector-card") as HTMLElement
     selectS = card.querySelector("#select-season-dropdown") as? HTMLSelectElement
-    populateSeasonsDropdown(selectS)
+    populateDashboardSeasonsDropdown(selectS)
 
     return SeasonSelectorControls(selectS)
 }
@@ -98,7 +98,7 @@ private fun DIV.renderLeagueDropdownField() {
     }
 }
 
-internal fun populateSeasonsDropdown(selectEl: HTMLSelectElement?) {
+internal fun populateDashboardSeasonsDropdown(selectEl: HTMLSelectElement?) {
     if (selectEl == null) return
     selectEl.innerHTML = ""
     seasonsList.forEach { season ->

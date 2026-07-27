@@ -81,7 +81,7 @@ internal fun renderStatsFilterCard(container: HTMLElement): Pair<HTMLSelectEleme
     return Pair(selectS, selectT)
 }
 
-internal fun populateSeasonsDropdown(selectEl: HTMLSelectElement?) {
+internal fun populateStatsSeasonsDropdown(selectEl: HTMLSelectElement?) {
     if (selectEl == null) return
     selectEl.innerHTML = ""
     seasonsList.forEach { season ->
@@ -357,5 +357,28 @@ private fun renderFieldingRow(tbody: TBODY, row: PlayerFieldingStats, playerReco
         td { +row.assists.toString() }
         td { +row.errors.toString() }
         td { +row.fieldingPercentage.asPrecision(3) }
+    }
+}
+
+private fun Double.asPrecision(digits: Int): String {
+    val factor = if (digits == 2) 100 else 1000
+    val rounded = (this * factor).toInt()
+    return if (digits == 3) {
+        val str = rounded.toString()
+        when {
+            rounded == 0 -> ".000"
+            rounded >= 1000 -> {
+                val s = this.toString()
+                if (s.length >= 5) s.substring(0, 5) else s
+            }
+            str.length == 1 -> ".00$str"
+            str.length == 2 -> ".0$str"
+            else -> ".$str"
+        }
+    } else {
+        val whole = rounded / 100
+        val frac = rounded % 100
+        val fracStr = if (frac < 10) "0$frac" else frac.toString()
+        "$whole.$fracStr"
     }
 }
