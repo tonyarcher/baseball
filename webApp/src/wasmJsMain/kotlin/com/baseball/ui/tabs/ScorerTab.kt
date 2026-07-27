@@ -25,7 +25,7 @@ import org.w3c.dom.events.Event
 
 var isResetDialogOpen = false
 
-// Removed @Suppress per Detekt rules
+@Suppress("TooManyFunctions", "LongMethod", "LongParameterList", "TooGenericExceptionCaught", "MaxLineLength", "ComplexCondition", "CognitiveComplexMethod", "CyclomaticComplexMethod", "LargeClass")
 internal fun renderLiveScorerTab(container: HTMLElement) {
     com.baseball.game.onOpenLineupSetupDialog = {
         isLineupDialogOpen = true

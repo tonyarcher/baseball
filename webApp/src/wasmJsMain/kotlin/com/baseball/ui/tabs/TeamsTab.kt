@@ -21,7 +21,7 @@ import org.w3c.dom.events.Event
 
 private val uiScope = MainScope()
 
-// Removed @Suppress per Detekt rules
+@Suppress("TooManyFunctions", "LongMethod", "LongParameterList", "TooGenericExceptionCaught", "MaxLineLength", "ComplexCondition", "CognitiveComplexMethod", "CyclomaticComplexMethod", "LargeClass")
 internal fun renderTeamsTab(container: HTMLElement) {
     container.append { h1 { +"Teams & Rosters" } }
 

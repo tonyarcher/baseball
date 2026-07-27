@@ -24,7 +24,16 @@ class BoxScoreService(
             .orElseThrow { IllegalArgumentException("Away Team not found: ${game.awayTeamId}") }.toDomain()
 
         val lineScore = createLineScore(
-            LineScoreParams(gameId, gameInningRepository, game.awayScore, game.homeScore, game.awayHits, game.homeHits, game.awayErrors, game.homeErrors)
+            LineScoreParams(
+                gameId = gameId,
+                gameInningRepository = gameInningRepository,
+                awayScore = game.awayScore,
+                homeScore = game.homeScore,
+                awayHits = game.awayHits,
+                homeHits = game.homeHits,
+                awayErrors = game.awayErrors,
+                homeErrors = game.homeErrors,
+            )
         )
         return buildBoxScoreResponse(gameId, homeTeam.name, awayTeam.name, lineScore, game.homeTeamId)
     }

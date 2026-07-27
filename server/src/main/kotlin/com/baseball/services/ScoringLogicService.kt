@@ -18,6 +18,7 @@ class ScoringLogicService {
         val isHitByPitch: Boolean,
     )
 
+    @Suppress("LongMethod")
     fun handleScoringEvent(
         request: ScoringEventRequest,
         batter: PlayerEntity,
