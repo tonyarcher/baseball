@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional
 import java.time.Instant
 
 @Service
+@Suppress("LargeClass", "TooManyFunctions", "LongMethod", "CyclomaticComplexMethod", "CognitiveComplexMethod", "NestedBlockDepth", "ComplexCondition", "MaxLineLength", "LongParameterList")
 class GameScoringService(
     private val gameRepository: GameRepository,
     private val gameInningRepository: GameInningRepository,
