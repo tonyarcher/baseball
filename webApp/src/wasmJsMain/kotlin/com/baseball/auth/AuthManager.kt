@@ -1,6 +1,8 @@
 package com.baseball.auth
 
-import com.baseball.game.BaseballConstants
+import com.baseball.ui.auth.STATUS_CONNECT
+import com.baseball.ui.auth.STATUS_NETWORK
+import com.baseball.ui.auth.STATUS_REFUSED
 import com.baseball.api
 import com.baseball.models.RegisterRequestDto
 import kotlinx.browser.window
@@ -49,9 +51,9 @@ object AuthManager : AuthService {
             return session
         } catch (e: Throwable) {
             val msg = e.message ?: ""
-            if (msg.contains(BaseballConstants.STATUS_CONNECT, ignoreCase = true) ||
-                msg.contains(BaseballConstants.STATUS_REFUSED, ignoreCase = true) ||
-                msg.contains(BaseballConstants.STATUS_NETWORK, ignoreCase = true)
+            if (msg.contains(STATUS_CONNECT, ignoreCase = true) ||
+                msg.contains(STATUS_REFUSED, ignoreCase = true) ||
+                msg.contains(STATUS_NETWORK, ignoreCase = true)
             ) {
                 throw e
             }

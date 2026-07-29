@@ -14,13 +14,6 @@ object BaseballConstants {
     const val DESC_DOUBLE_PLAY = "Double Play"
     const val DESC_DP = "DP"
 
-    // Network & Authentication Status
-    const val STATUS_CONNECT = "connect"
-    const val STATUS_REFUSED = "refused"
-    const val STATUS_NETWORK = "network"
-    const val STATUS_400 = "400"
-    const val STATUS_BAD_REQUEST = "BadRequest"
-
     // Baseball Positions
     object Positions {
         const val P = "P"
