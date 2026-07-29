@@ -1,6 +1,6 @@
 package com.baseball.ui.gametracking.scoring
 
-import com.baseball.BaseballConstants
+import com.baseball.ui.state.NavTabs
 import com.baseball.api
 import com.baseball.game.GameManager
 import com.baseball.game.PlayEventInput
@@ -80,7 +80,7 @@ class GameScoringController(
                     }
                     +"View Final Box Score"
                     onClickFunction = {
-                        currentTab = BaseballConstants.TAB_BOXSCORE
+                        currentTab = NavTabs.TAB_BOXSCORE
                         updateActiveTabButtons()
                         renderCurrentTab()
                     }

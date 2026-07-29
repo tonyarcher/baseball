@@ -1,6 +1,6 @@
 package com.baseball.ui.tabs.dashboard
 
-import com.baseball.BaseballConstants
+import com.baseball.ui.state.NavTabs
 import com.baseball.models.Game
 import com.baseball.models.GameStatus
 import com.baseball.models.TeamStandings
@@ -159,7 +159,7 @@ private fun DIV.renderActiveGameAction(g: Game) {
         +"Score Game"
         onClickFunction = {
             selectedGameId = g.id
-            currentTab = BaseballConstants.TAB_LIVE_SCORER
+            currentTab = NavTabs.TAB_LIVE_SCORER
             updateActiveTabButtons()
             renderCurrentTab()
         }

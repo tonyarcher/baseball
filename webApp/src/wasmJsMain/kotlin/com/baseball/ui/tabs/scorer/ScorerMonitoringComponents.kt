@@ -1,6 +1,6 @@
 package com.baseball.ui.tabs.scorer
 
-import com.baseball.BaseballConstants
+import com.baseball.game.BaseballConstants
 import com.baseball.models.HalfInning
 import com.baseball.models.PlayEvent
 import com.baseball.models.Player
@@ -30,17 +30,6 @@ import kotlinx.css.fontWeight
 import kotlinx.css.gap
 import kotlinx.css.justifyContent
 import kotlinx.css.Margin
-import kotlinx.css.alignItems
-import kotlinx.css.background
-import kotlinx.css.borderBottom
-import kotlinx.css.borderLeft
-import kotlinx.css.color
-import kotlinx.css.display
-import kotlinx.css.flexDirection
-import kotlinx.css.fontSize
-import kotlinx.css.fontWeight
-import kotlinx.css.gap
-import kotlinx.css.justifyContent
 import kotlinx.css.margin
 import kotlinx.css.marginBottom
 import kotlinx.css.marginTop

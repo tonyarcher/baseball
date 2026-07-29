@@ -1,12 +1,10 @@
 package com.baseball.ui.state
 
 import com.baseball.ui.core.DomUiConstants
-import com.baseball.ui.core.UiConstants
 import com.baseball.ui.core.css
 import com.baseball.ui.core.launch
-import com.baseball.ui.core.uiScope
 
-import com.baseball.BaseballConstants
+import com.baseball.game.BaseballConstants
 import com.baseball.api
 import com.baseball.auth.UserSession
 import com.baseball.authService
@@ -80,7 +78,7 @@ data class NavState(
 object AppViewManager {
     private val tabRenderers = mutableMapOf<String, (HTMLElement) -> Unit>()
 
-    var internalCurrentTab: String = BaseballConstants.TAB_LEAGUES
+    var internalCurrentTab: String = NavTabs.TAB_LEAGUES
     var currentTab: String
         get() = internalCurrentTab
         set(value) {
@@ -156,7 +154,7 @@ object AppViewManager {
         if (initialHash.isNotEmpty()) {
             handleHashRoute(initialHash, isEvent = false)
         } else {
-            window.location.hash = if (isWelcomeScreen) BaseballConstants.TAB_WELCOME else currentTab
+            window.location.hash = if (isWelcomeScreen) NavTabs.TAB_WELCOME else currentTab
         }
 
         if (isSingleGameMode) {
@@ -171,16 +169,16 @@ object AppViewManager {
     private fun handleHashRoute(hash: String, isEvent: Boolean) {
         if (requiresOnlineAuth(hash) && currentUserSession == null) {
             if (isEvent) {
-                window.location.hash = BaseballConstants.TAB_LOGIN
+                window.location.hash = NavTabs.TAB_LOGIN
             } else {
                 isWelcomeScreen = false
-                internalCurrentTab = BaseballConstants.TAB_LOGIN
-                window.location.hash = BaseballConstants.TAB_LOGIN
+                internalCurrentTab = NavTabs.TAB_LOGIN
+                window.location.hash = NavTabs.TAB_LOGIN
             }
             return
         }
 
-        if (hash == BaseballConstants.TAB_WELCOME) {
+        if (hash == NavTabs.TAB_WELCOME) {
             isWelcomeScreen = true
         } else if (isValidTab(hash)) {
             isWelcomeScreen = false
@@ -197,24 +195,24 @@ object AppViewManager {
 
     private fun requiresOnlineAuth(hash: String): Boolean {
         val onlineOnlyTabs = listOf(
-            BaseballConstants.TAB_LEAGUES,
-            BaseballConstants.TAB_TEAMS,
-            BaseballConstants.TAB_GAMES,
-            BaseballConstants.TAB_STATS,
+            NavTabs.TAB_LEAGUES,
+            NavTabs.TAB_TEAMS,
+            NavTabs.TAB_GAMES,
+            NavTabs.TAB_STATS,
         )
-        val onlineGameTabs = listOf(BaseballConstants.TAB_LIVE_SCORER, BaseballConstants.TAB_BOXSCORE)
+        val onlineGameTabs = listOf(NavTabs.TAB_LIVE_SCORER, NavTabs.TAB_BOXSCORE)
         return hash in onlineOnlyTabs || (!isSingleGameMode && hash in onlineGameTabs)
     }
 
     private fun isValidTab(hash: String): Boolean = hash in listOf(
-        BaseballConstants.TAB_LEAGUES,
-        BaseballConstants.TAB_TEAMS,
-        BaseballConstants.TAB_GAMES,
-        BaseballConstants.TAB_STATS,
-        BaseballConstants.TAB_LIVE_SCORER,
-        BaseballConstants.TAB_BOXSCORE,
-        BaseballConstants.TAB_LOGIN,
-        BaseballConstants.TAB_REGISTER,
+        NavTabs.TAB_LEAGUES,
+        NavTabs.TAB_TEAMS,
+        NavTabs.TAB_GAMES,
+        NavTabs.TAB_STATS,
+        NavTabs.TAB_LIVE_SCORER,
+        NavTabs.TAB_BOXSCORE,
+        NavTabs.TAB_LOGIN,
+        NavTabs.TAB_REGISTER,
     )
 
     private fun fetchInitialServerData() {
@@ -314,7 +312,7 @@ object AppViewManager {
                 isWelcomeScreen = false
                 isSingleGameMode = true
                 initGame(forceReset = false)
-                window.location.hash = BaseballConstants.TAB_LIVE_SCORER
+                window.location.hash = NavTabs.TAB_LIVE_SCORER
             }
             div(classes = "mode-icon") { +"⚾" }
             div(classes = "mode-title") { +"Single Game Mode" }
@@ -363,9 +361,9 @@ object AppViewManager {
                 isWelcomeScreen = false
                 isSingleGameMode = false
                 val nextHash = if (currentUserSession == null) {
-                    BaseballConstants.TAB_LOGIN
+                    NavTabs.TAB_LOGIN
                 } else {
-                    BaseballConstants.TAB_LEAGUES
+                    NavTabs.TAB_LEAGUES
                 }
                 window.location.hash = nextHash
             } catch (ignored: Throwable) {
@@ -460,22 +458,22 @@ object AppViewManager {
                 button(classes = "nav-btn") {
                     id = "nav-btn-leagues"
                     +"Leagues & Seasons"
-                    onClickFunction = { currentTab = BaseballConstants.TAB_LEAGUES }
+                    onClickFunction = { currentTab = NavTabs.TAB_LEAGUES }
                 }
                 button(classes = "nav-btn") {
                     id = "nav-btn-teams"
                     +"Teams & Rosters"
-                    onClickFunction = { currentTab = BaseballConstants.TAB_TEAMS }
+                    onClickFunction = { currentTab = NavTabs.TAB_TEAMS }
                 }
                 button(classes = "nav-btn") {
                     id = "nav-btn-games"
                     +"Season Dashboard"
-                    onClickFunction = { currentTab = BaseballConstants.TAB_GAMES }
+                    onClickFunction = { currentTab = NavTabs.TAB_GAMES }
                 }
                 button(classes = "nav-btn") {
                     id = "nav-btn-stats"
                     +"Season Stats"
-                    onClickFunction = { currentTab = BaseballConstants.TAB_STATS }
+                    onClickFunction = { currentTab = NavTabs.TAB_STATS }
                 }
             }
 
@@ -485,7 +483,7 @@ object AppViewManager {
                 css {
                     display = if (isSingleGameMode || selectedGameId != null) Display.inlineBlock else Display.none
                 }
-                onClickFunction = { currentTab = BaseballConstants.TAB_LIVE_SCORER }
+                onClickFunction = { currentTab = NavTabs.TAB_LIVE_SCORER }
             }
         }
     }
@@ -514,12 +512,12 @@ object AppViewManager {
 
     private fun getActiveNavButton(btnLive: HTMLButtonElement?, btnBoxScore: HTMLButtonElement?): HTMLElement? =
         when (currentTab) {
-            BaseballConstants.TAB_LIVE_SCORER -> btnLive
-            BaseballConstants.TAB_BOXSCORE -> btnBoxScore
-            BaseballConstants.TAB_LEAGUES -> document.getElementById("nav-btn-leagues") as? HTMLElement
-            BaseballConstants.TAB_TEAMS -> document.getElementById("nav-btn-teams") as? HTMLElement
-            BaseballConstants.TAB_GAMES -> document.getElementById("nav-btn-games") as? HTMLElement
-            BaseballConstants.TAB_STATS -> document.getElementById("nav-btn-stats") as? HTMLElement
+            NavTabs.TAB_LIVE_SCORER -> btnLive
+            NavTabs.TAB_BOXSCORE -> btnBoxScore
+            NavTabs.TAB_LEAGUES -> document.getElementById("nav-btn-leagues") as? HTMLElement
+            NavTabs.TAB_TEAMS -> document.getElementById("nav-btn-teams") as? HTMLElement
+            NavTabs.TAB_GAMES -> document.getElementById("nav-btn-games") as? HTMLElement
+            NavTabs.TAB_STATS -> document.getElementById("nav-btn-stats") as? HTMLElement
             else -> null
         }
 

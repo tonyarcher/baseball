@@ -1,6 +1,6 @@
 package com.baseball.ui.auth
 
-import com.baseball.BaseballConstants
+import com.baseball.game.BaseballConstants
 import com.baseball.ui.core.DomUiConstants
 import org.w3c.dom.HTMLDivElement
 

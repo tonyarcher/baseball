@@ -1,6 +1,6 @@
 package com.baseball.ui.auth
 
-import com.baseball.BaseballConstants
+import com.baseball.ui.state.NavTabs
 import com.baseball.ui.core.DomUiConstants
 import com.baseball.auth.UserAccount
 import com.baseball.authService
@@ -165,7 +165,7 @@ private suspend fun executeLogin(email: String, pass: String, banner: HTMLDivEle
     try {
         val session = authService.login(email, pass)
         if (session != null) {
-            window.location.hash = BaseballConstants.TAB_WELCOME
+            window.location.hash = NavTabs.TAB_WELCOME
         } else {
             showError(banner, "Invalid email or password.")
         }
@@ -317,7 +317,7 @@ private suspend fun executeRegister(first: String, last: String, email: String, 
         authService.registerUser(UserAccount(email, first, last, pass))
         val session = authService.login(email, pass)
         if (session != null) {
-            window.location.hash = BaseballConstants.TAB_WELCOME
+            window.location.hash = NavTabs.TAB_WELCOME
         } else {
             showError(banner, "Registration succeeded, but login failed.")
         }

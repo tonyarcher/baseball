@@ -1,6 +1,6 @@
 package com.baseball.ui.gametracking.scorebook
 
-import com.baseball.BaseballConstants
+import com.baseball.game.BaseballConstants
 import com.baseball.game.localAwayBench
 import com.baseball.game.localAwayLineup
 import com.baseball.game.localHomeBench
@@ -8,7 +8,6 @@ import com.baseball.game.localHomeLineup
 import com.baseball.game.localPlayersSubbedOut
 import com.baseball.models.PlayEvent
 import com.baseball.ui.core.DomUiConstants
-import com.baseball.ui.core.UiConstants
 import com.baseball.ui.state.renderCurrentTab
 import com.baseball.ui.state.substituteBatter
 import kotlinx.browser.document

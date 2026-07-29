@@ -1,6 +1,6 @@
 package com.baseball.ui.tabs.leagues
 
-import com.baseball.BaseballConstants
+import com.baseball.ui.state.NavTabs
 import com.baseball.api
 import com.baseball.models.Season
 import com.baseball.ui.core.UiConstants
@@ -163,7 +163,7 @@ internal fun renderSeasonCardItem(parent: HTMLDivElement, season: Season) {
                 onClickFunction = {
                     selectedSeasonId = season.id
                     saveNavState()
-                    currentTab = BaseballConstants.TAB_GAMES
+                    currentTab = NavTabs.TAB_GAMES
                 }
             }
         }

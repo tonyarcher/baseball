@@ -1,6 +1,6 @@
 package com.baseball.ui.gametracking.scorebook
 
-import com.baseball.BaseballConstants
+import com.baseball.game.BaseballConstants
 import com.baseball.game.localAwayActivePitcherId
 import com.baseball.game.localAwayActivePitcherName
 import com.baseball.game.localAwayBench
@@ -18,7 +18,6 @@ import com.baseball.models.PlayEvent
 import com.baseball.models.PlayerBattingStats
 import com.baseball.models.Team
 import com.baseball.ui.core.DomUiConstants
-import com.baseball.ui.core.UiConstants
 import com.baseball.ui.core.css
 import com.baseball.ui.state.renderCurrentTab
 import com.baseball.ui.state.substitutePitcher
