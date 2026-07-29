@@ -5,10 +5,10 @@ import com.baseball.models.HalfInning
 import com.baseball.models.PlayEvent
 import com.baseball.models.Player
 import com.baseball.models.ScoringEventType
-import com.baseball.ui.UiConstants
+import com.baseball.ui.core.UiConstants
+import com.baseball.ui.core.css
 import com.baseball.ui.gametracking.scorebook.getScorebookNotation
 import com.baseball.ui.gametracking.scorebook.renderScorebookView
-import com.baseball.ui.css
 import kotlinx.css.Align
 import kotlinx.css.Border
 import kotlinx.css.BorderStyle

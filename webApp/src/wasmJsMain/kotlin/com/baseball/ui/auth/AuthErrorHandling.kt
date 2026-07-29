@@ -1,12 +1,12 @@
 package com.baseball.ui.auth
 
 import com.baseball.BaseballConstants
-import com.baseball.UiConstants
+import com.baseball.ui.core.DomUiConstants
 import org.w3c.dom.HTMLDivElement
 
 internal fun showError(banner: HTMLDivElement, message: String) {
     banner.textContent = message
-    banner.style.setProperty(UiConstants.Css.DISPLAY, UiConstants.CssValues.BLOCK)
+    banner.style.setProperty(DomUiConstants.Css.DISPLAY, DomUiConstants.CssValues.BLOCK)
 }
 
 internal fun parseAuthException(e: Throwable): String {

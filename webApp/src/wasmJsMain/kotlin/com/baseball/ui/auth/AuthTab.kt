@@ -1,11 +1,11 @@
 package com.baseball.ui.auth
 
 import com.baseball.BaseballConstants
-import com.baseball.UiConstants
+import com.baseball.ui.core.DomUiConstants
 import com.baseball.auth.UserAccount
 import com.baseball.authService
-import com.baseball.ui.css
-import com.baseball.ui.launch
+import com.baseball.ui.core.css
+import com.baseball.ui.core.launch
 import kotlinx.browser.document
 import kotlinx.browser.window
 import kotlinx.css.Border
@@ -144,7 +144,7 @@ private fun handleLoginClick() {
     val passIn = document.getElementById("login-password") as? HTMLInputElement
     if (banner == null || emailIn == null || passIn == null) return
 
-    banner.style.setProperty(UiConstants.Css.DISPLAY, UiConstants.CssValues.NONE)
+    banner.style.setProperty(DomUiConstants.Css.DISPLAY, DomUiConstants.CssValues.NONE)
     val email = emailIn.value.trim()
     val password = passIn.value
 
@@ -292,7 +292,7 @@ private fun handleRegisterClick() {
     val passIn = document.getElementById("register-password") as? HTMLInputElement
     if (banner == null || firstIn == null || lastIn == null || emailIn == null || passIn == null) return
 
-    banner.style.setProperty(UiConstants.Css.DISPLAY, UiConstants.CssValues.NONE)
+    banner.style.setProperty(DomUiConstants.Css.DISPLAY, DomUiConstants.CssValues.NONE)
     val first = firstIn.value.trim()
     val last = lastIn.value.trim()
     val email = emailIn.value.trim()

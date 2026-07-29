@@ -1,7 +1,12 @@
-package com.baseball.ui
+package com.baseball.ui.state
+
+import com.baseball.ui.core.DomUiConstants
+import com.baseball.ui.core.UiConstants
+import com.baseball.ui.core.css
+import com.baseball.ui.core.launch
+import com.baseball.ui.core.uiScope
 
 import com.baseball.BaseballConstants
-import com.baseball.UiConstants
 import com.baseball.api
 import com.baseball.auth.UserSession
 import com.baseball.authService
@@ -496,11 +501,11 @@ object AppViewManager {
         val btnBoxScore = document.getElementById("nav-btn-boxscore") as? HTMLButtonElement
 
         if (isSingleGameMode || selectedGameId != null) {
-            btnLive?.style?.setProperty(UiConstants.Css.DISPLAY, UiConstants.CssValues.INLINE_BLOCK)
-            btnBoxScore?.style?.setProperty(UiConstants.Css.DISPLAY, UiConstants.CssValues.INLINE_BLOCK)
+            btnLive?.style?.setProperty(DomUiConstants.Css.DISPLAY, DomUiConstants.CssValues.INLINE_BLOCK)
+            btnBoxScore?.style?.setProperty(DomUiConstants.Css.DISPLAY, DomUiConstants.CssValues.INLINE_BLOCK)
         } else {
-            btnLive?.style?.setProperty(UiConstants.Css.DISPLAY, UiConstants.CssValues.NONE)
-            btnBoxScore?.style?.setProperty(UiConstants.Css.DISPLAY, UiConstants.CssValues.NONE)
+            btnLive?.style?.setProperty(DomUiConstants.Css.DISPLAY, DomUiConstants.CssValues.NONE)
+            btnBoxScore?.style?.setProperty(DomUiConstants.Css.DISPLAY, DomUiConstants.CssValues.NONE)
         }
 
         val btnActive = getActiveNavButton(btnLive, btnBoxScore)

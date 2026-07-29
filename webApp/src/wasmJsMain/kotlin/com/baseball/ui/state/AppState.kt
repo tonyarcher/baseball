@@ -1,4 +1,4 @@
-package com.baseball.ui
+package com.baseball.ui.state
 
 import com.baseball.models.GameStatus
 import com.baseball.models.League
