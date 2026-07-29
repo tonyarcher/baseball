@@ -13,10 +13,10 @@ import com.baseball.models.Game
 import com.baseball.models.GameStatus
 import com.baseball.models.PlayEvent
 import com.baseball.models.Player
-import com.baseball.ui.components.gametracking.lineup.LineupSetupOverlay
-import com.baseball.ui.components.gametracking.lineup.isLineupDialogOpen
-import com.baseball.ui.components.gametracking.scoring.renderGameScoringControls
-import com.baseball.ui.components.gametracking.scoring.renderScorerLedScoreboard
+import com.baseball.ui.gametracking.lineup.LineupSetupOverlay
+import com.baseball.ui.gametracking.lineup.isLineupDialogOpen
+import com.baseball.ui.gametracking.scoring.renderGameScoringControls
+import com.baseball.ui.gametracking.scoring.renderScorerLedScoreboard
 import com.baseball.ui.css
 import com.baseball.ui.isSingleGameMode
 import com.baseball.ui.launch
