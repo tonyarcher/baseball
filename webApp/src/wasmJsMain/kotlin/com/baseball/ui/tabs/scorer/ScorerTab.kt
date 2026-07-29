@@ -108,8 +108,8 @@ private suspend fun loadScorerData(): ScorerData {
     val homeRoster = api.getTeamRoster(game.homeTeam.id!!)
     val awayRoster = api.getTeamRoster(game.awayTeam.id!!)
     selectedGameStatus = game.status
-    harmonizeAwayLineup(game, awayRoster)
-    harmonizeHomeLineup(game, homeRoster)
+    ScorerLineupHarmonizer.harmonizeAwayLineup(game, awayRoster)
+    ScorerLineupHarmonizer.harmonizeHomeLineup(game, homeRoster)
     return ScorerData(game, events, boxScore, homeRoster, awayRoster)
 }
 
