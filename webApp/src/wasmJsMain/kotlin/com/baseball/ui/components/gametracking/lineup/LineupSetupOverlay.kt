@@ -1,4 +1,4 @@
-package com.baseball.ui.components.lineup
+package com.baseball.ui.components.gametracking.lineup
 
 import com.baseball.BaseballConstants
 import com.baseball.api
