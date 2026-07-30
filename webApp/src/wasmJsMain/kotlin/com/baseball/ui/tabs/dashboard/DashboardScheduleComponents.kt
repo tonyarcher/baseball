@@ -25,7 +25,6 @@ import kotlinx.css.cursor
 import kotlinx.css.display
 import kotlinx.css.flexWrap
 import kotlinx.css.gap
-import kotlinx.css.hr
 import kotlinx.css.justifyContent
 import kotlinx.css.margin
 import kotlinx.css.marginBottom

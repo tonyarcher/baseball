@@ -1,10 +1,5 @@
 package com.baseball.ui.state
 
-import com.baseball.ui.core.DomUiConstants
-import com.baseball.ui.core.css
-import com.baseball.ui.core.launch
-
-import com.baseball.game.BaseballConstants
 import com.baseball.api
 import com.baseball.auth.UserSession
 import com.baseball.authService
@@ -23,6 +18,9 @@ import com.baseball.game.localHomeLineup
 import com.baseball.game.localPlayersSubbedOut
 import com.baseball.game.saveLocalState
 import com.baseball.models.HalfInning
+import com.baseball.ui.core.DomUiConstants
+import com.baseball.ui.core.css
+import com.baseball.ui.core.launch
 import kotlinx.browser.document
 import kotlinx.browser.window
 import kotlinx.css.Align

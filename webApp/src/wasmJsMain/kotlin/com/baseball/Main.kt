@@ -4,10 +4,10 @@ import com.baseball.api.BaseballApi
 import com.baseball.api.BaseballApiClient
 import com.baseball.auth.AuthManager
 import com.baseball.auth.AuthService
-import com.baseball.ui.state.NavTabs
-import com.baseball.ui.state.AppViewManager
 import com.baseball.ui.auth.renderLoginTab
 import com.baseball.ui.auth.renderRegisterTab
+import com.baseball.ui.state.AppViewManager
+import com.baseball.ui.state.NavTabs
 import com.baseball.ui.tabs.boxscore.renderBoxScoreTab
 import com.baseball.ui.tabs.dashboard.renderSeasonDashboardTab
 import com.baseball.ui.tabs.leagues.renderLeaguesTab

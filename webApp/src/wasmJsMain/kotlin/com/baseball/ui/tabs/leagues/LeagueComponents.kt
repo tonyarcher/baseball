@@ -1,11 +1,11 @@
 package com.baseball.ui.tabs.leagues
 
-import com.baseball.ui.state.NavTabs
 import com.baseball.api
 import com.baseball.models.Season
 import com.baseball.ui.core.UiConstants
 import com.baseball.ui.core.css
 import com.baseball.ui.core.launch
+import com.baseball.ui.state.NavTabs
 import com.baseball.ui.state.currentTab
 import com.baseball.ui.state.leaguesList
 import com.baseball.ui.state.renderCurrentTab

@@ -1,11 +1,11 @@
 package com.baseball.ui.tabs.dashboard
 
-import com.baseball.ui.state.NavTabs
 import com.baseball.models.Game
 import com.baseball.models.GameStatus
 import com.baseball.models.TeamStandings
 import com.baseball.ui.core.UiConstants
 import com.baseball.ui.core.css
+import com.baseball.ui.state.NavTabs
 import com.baseball.ui.state.currentTab
 import com.baseball.ui.state.renderCurrentTab
 import com.baseball.ui.state.selectedGameId

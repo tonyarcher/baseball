@@ -17,6 +17,7 @@ import kotlinx.css.Display
 import kotlinx.css.FlexDirection
 import kotlinx.css.FontWeight
 import kotlinx.css.JustifyContent
+import kotlinx.css.Margin
 import kotlinx.css.Padding
 import kotlinx.css.alignItems
 import kotlinx.css.background
@@ -29,7 +30,6 @@ import kotlinx.css.fontSize
 import kotlinx.css.fontWeight
 import kotlinx.css.gap
 import kotlinx.css.justifyContent
-import kotlinx.css.Margin
 import kotlinx.css.margin
 import kotlinx.css.marginBottom
 import kotlinx.css.marginTop

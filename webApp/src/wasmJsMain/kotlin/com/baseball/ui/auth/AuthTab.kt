@@ -1,11 +1,11 @@
 package com.baseball.ui.auth
 
-import com.baseball.ui.state.NavTabs
-import com.baseball.ui.core.DomUiConstants
 import com.baseball.auth.UserAccount
 import com.baseball.authService
+import com.baseball.ui.core.DomUiConstants
 import com.baseball.ui.core.css
 import com.baseball.ui.core.launch
+import com.baseball.ui.state.NavTabs
 import kotlinx.browser.document
 import kotlinx.browser.window
 import kotlinx.css.Border

@@ -1,10 +1,10 @@
 package com.baseball.auth
 
+import com.baseball.api
+import com.baseball.models.RegisterRequestDto
 import com.baseball.ui.auth.STATUS_CONNECT
 import com.baseball.ui.auth.STATUS_NETWORK
 import com.baseball.ui.auth.STATUS_REFUSED
-import com.baseball.api
-import com.baseball.models.RegisterRequestDto
 import kotlinx.browser.window
 import kotlinx.serialization.json.Json
 

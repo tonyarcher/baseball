@@ -1,6 +1,5 @@
 package com.baseball.ui.gametracking.scoring
 
-import com.baseball.ui.state.NavTabs
 import com.baseball.api
 import com.baseball.game.GameManager
 import com.baseball.game.PlayEventInput
@@ -11,6 +10,7 @@ import com.baseball.models.ScoringEventRequest
 import com.baseball.models.ScoringEventType
 import com.baseball.ui.core.css
 import com.baseball.ui.core.launch
+import com.baseball.ui.state.NavTabs
 import com.baseball.ui.state.currentTab
 import com.baseball.ui.state.isSingleGameMode
 import com.baseball.ui.state.renderCurrentTab

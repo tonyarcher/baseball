@@ -1,7 +1,6 @@
 package com.baseball.ui.tabs.boxscore
 
 
-import com.baseball.ui.state.NavTabs
 import com.baseball.api
 import com.baseball.game.localBoxScore
 import com.baseball.game.localEvents
@@ -15,6 +14,7 @@ import com.baseball.ui.core.UiConstants
 import com.baseball.ui.core.css
 import com.baseball.ui.core.launch
 import com.baseball.ui.gametracking.scorebook.renderScorebookView
+import com.baseball.ui.state.NavTabs
 import com.baseball.ui.state.currentTab
 import com.baseball.ui.state.isSingleGameMode
 import com.baseball.ui.state.renderCurrentTab

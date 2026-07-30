@@ -1,7 +1,7 @@
 package com.baseball.ui.gametracking.lineup
 
-import com.baseball.game.BaseballConstants
 import com.baseball.api
+import com.baseball.game.BaseballConstants
 import com.baseball.game.TeamLineupConfig
 import com.baseball.game.localAwayActivePitcherId
 import com.baseball.game.localAwayActivePitcherName
